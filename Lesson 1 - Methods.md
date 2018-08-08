@@ -19,48 +19,58 @@ After you've covered methods, watch the following video about variable scope: ht
 
 "Scope" is the concept of where a variable exists and for how long. Basically, variables declared in a method only exist in that method, variables declared in a loop only exist in that loop, and variables declared in a class exist throughout that entire class. A variable cannot be accessed or changed from a location in code where it does not exist.
 
- 
-Using the Java Scanner class to get user input
+## Using the Java Scanner class to get user input
 
-Java has a "Scanner" class that can be used to get user input from the console that appears at the bottom of your Eclipse screen where your program output is. Here's an example of how to use it to get an integer. Note that you'll need the following line:
+Java has a "Scanner" class that can be used to get user input from the console that appears at the bottom of your Eclipse screen where your program output is. Here's an example of how to use it to get an integer.
 
+```
 import java.util.Scanner;
 
-At the very top of the file you're using the scanner in, or it will not work.
+public class Main {
 
-Scanner scanner = new Scanner(System.in);
-int userInput = scanner.nextInt();
+	public static void main(String[] args) {
+		System.out.print("Enter a number: ");
+		Scanner scanner = new Scanner(System.in);  
+		int userInput = scanner.nextInt();
+		System.out.println("You entered " + userInput);
+		scanner.close();
+	}
+
+}
+```
 
 This declares an integer variable called "userInput" and it will take the value of whatever you enter into the console. Using the scanner will pause your program until you enter something and press enter. If you enter something that isn't an integer, you'll get an error. Make sure to familiarize yourself with the scanner because we'll be using it extensively.
 
- 
-Assignments
+## Assignments
 
-Method-specific practice - if you get stuck on this assignment, refer back to the youtube video about methods. It should be helpful.
-  Write a program that uses the scanner class to accept two integers from the user. For example:
-  
-  Scanner scanner = new Scanner(System.in);
-  int firstNumber = scanner.nextInt();
-  int secondNumber = scanner.nextInt();
-  
-  Then add six methods to your program as follows.
-    - A "welcome" method that takes no parameters and returns nothing, that outputs a simple "Welcome to calculator" message to the user.
-    - An "add" method that takes two integer parameters, adds the two integers together, and outputs the result. This method does not return anything.
-    - A "multiply" method that takes two integer parameters, multiplies them together, and then returns the result as an integer.
-    - A "subtract" method that takes two integer parameters, subtracts them, and then returns the result as an integer.
-    - A "modulo" method that takes two integer parameters, performs modulo division on them, and then outputs the result. This method does not return anything.
-    - A "cube" method that takes a single integer parameter, cubes it, and returns the result as an integer.
-  
-  Then, in your main method, call each of these six methods using one or both of the numbers that the user input. For the methods that return a value instead of outputting a result, output the value they return in your main method. You can either use a variable to do this like so:
-  
-  int product = multiply(firstNumber, secondNumber);
-  System.out.println(product);
-  
-  Or you can combine that into a single line:
+Method-specific practice - if you get stuck on this assignment, refer back to the youtube video about methods. It should be helpful. Write a program that uses the scanner class to accept two integers from the user. For example:
+```
+Scanner scanner = new Scanner(System.in);
+int firstNumber = scanner.nextInt();
+int secondNumber = scanner.nextInt();
+```
 
-  System.out.println(multiply(firstNumber, secondNumber));
-  So when you're done and you run your program, it should ask for two inputs, and then have six lines of output.
-General practice
+Then add six methods to your program as follows.
+  1. A "welcome" method that takes no parameters and returns nothing, that outputs a simple "Welcome to calculator" message to the user.
+  2. An "add" method that takes two integer parameters, adds the two integers together, and outputs the result. This method does not return anything.
+  3. A "multiply" method that takes two integer parameters, multiplies them together, and then returns the result as an integer.
+  4. A "subtract" method that takes two integer parameters, subtracts them, and then returns the result as an integer.
+  5. A "modulo" method that takes two integer parameters, performs modulo division on them, and then outputs the result. This method does not return anything.
+  6. A "cube" method that takes a single integer parameter, cubes it, and returns the result as an integer.
+
+Then, in your main method, call each of these six methods using one or both of the numbers that the user input. For the methods that return a value instead of outputting a result, output the value they return in your main method. You can either use a variable to do this like so:
+```
+int product = multiply(firstNumber, secondNumber);
+System.out.println(product);
+```
+Or you can combine that into a single line:
+```
+System.out.println(multiply(firstNumber, secondNumber));
+```
+So when you're done and you run your program, it should ask for two inputs, and then have six lines of output.
+
+## General practice
+
   The hardest part is usually figuring out how to start. Consider what variables and loops you will need. Figure out the logic of how to solve the puzzle before you worry about writing code. If you spend ten minutes on problem and haven't made any headway, ask for help. Don't spend an hour - that just leads to frustration.
   1. Take an integer input from the user and compute the "sum of squares" from 1 to that number. For example if the user entered 10, the answer would be 1^2 + 2^2 + ... + 10^2. Output the answer. To check your work - if you enter 10, the answer should be 385. If you enter 11, it should be 506.
   2. Take an integer input and compute the "square of sum" from 1 to that number. So if they entered 10, it would be (1 + 2 + ... + 10)^2. Output the answer. To check - 10 comes out to 3025, and 11 comes out to 4356.

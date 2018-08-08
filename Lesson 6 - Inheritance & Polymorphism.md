@@ -22,7 +22,7 @@ f.	Elevator
 g.	BoulderShooter
 h.	FuelShooter
 i.	RobotComposition, which will contain your main method
-2.	In your robot class, define two class fields, called “drivetrain” and “manipulator”. Make their variable types “Drivetrain” and “GamePieceManipulator”, respectively.
+2.	In your robot class, define a class field called “manipulator”. Make its variable type “GamePieceManipulator”.
 3.	In your RecycleRush, Stronghold, and SteamworksRobot classes, use the extends keyword to make these classes inherit from the class “Robot”. I will refer to these three classes – but not Robot itself - as “game robot classes”, just for ease of typing.
 4.	Make your Elevator, BoulderShooter, and FuelShooter classes extend the class “GamePieceManipulator”. I refer to these three classes – but not GamePieceManipulator itself - as “manipulator classes”.
 5.	In each of your game robot classes, create a constructor method that has no parameters. Inside your constructor, create an object of the class of the manipulator that best corresponds to that game. Then set the game robot’s manipulator class field (which it inherited from Robot, and therefore you don’t see in the code file you’re looking at), to the newly created object. Note how the “manipulator” variable is of type GamePieceManipulator, but across our three game robot classes, we were able to set it equal to objects of three different classes. That is because all of these classes, despite being different from each other, are still GamePieceManipulators.
